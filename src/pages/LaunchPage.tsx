@@ -72,7 +72,7 @@ async function initiateEhrLaunch(params: URLSearchParams): Promise<never> {
     response_type: 'code',
     client_id: clientId,
     scope: FHIR_SCOPE,
-    redirect_uri: window.location.origin + '/launch',
+    redirect_uri: window.location.origin + '/medplum-smart-on-fhir-demo/launch',
     state,
     aud: iss,
     launch: launch as string,
@@ -120,7 +120,7 @@ async function exchangeCodeForToken(
     body: new URLSearchParams({
       grant_type: 'authorization_code',
       code: code as string,
-      redirect_uri: window.location.origin + '/launch',
+      redirect_uri: window.location.origin + '/medplum-smart-on-fhir-demo/launch',
       client_id: clientId,
     }).toString(),
   });

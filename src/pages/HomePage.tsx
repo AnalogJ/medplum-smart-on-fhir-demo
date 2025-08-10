@@ -20,7 +20,7 @@ function SmartLaunch({ clientId, iss, children }: SmartLaunchProps): JSX.Element
       response_type: 'code',
       client_id: clientId,
       scope: FHIR_SCOPE,
-      redirect_uri: window.location.origin + '/launch',
+      redirect_uri: window.location.origin +  '/medplum-smart-on-fhir-demo/launch',
       state: crypto.randomUUID(),
       aud: iss,
     });
