@@ -15,7 +15,9 @@ const medplum = new MedplumClient({
 
 const container = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(container);
-const router = createBrowserRouter([{ path: '*', element: <App /> }]);
+const router = createBrowserRouter([{ path: '*', element: <App /> }], {
+    basename: "/medplum-smart-on-fhir-demo/", // All routes will be prefixed with /my-app
+});
 
 root.render(
   <StrictMode>
